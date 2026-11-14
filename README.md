@@ -537,7 +537,27 @@
                         0.00
                     </div>
                 </div>
+                const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbxQKxxFWQJJKMKNe1_KAkmjw38DY-MY4h3gDYP4bROxBTip0x625l0TAWehRqBt3Wdiag/exec";
+function kirimNilai() {
+  var dataKirim = {
+    nama: document.getElementById("namaSiswa").value,
+    kelas: document.getElementById("kelasSiswa").value,
+    sekolah: "SDN Mlangi 2",
+    nilai: nilaiAkhir, benar: jumlahBenar, total: totalSoal
+  };
 
+  fetch(URL_APPS_SCRIPT, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(dataKirim)
+  })
+  .then(() => {
+    alert("Nilai berhasil tersimpan! Terima kasih.");
+  });
+}
+<input type="text" id="namaSiswa" placeholder="Nama Lengkap">
+<input type="text" id="kelasSiswa" placeholder="Kelas, contoh 6A">
                 <!-- Rincian Peserta & Statistik Singkat -->
                 <div class="bg-slate-50 rounded-xl p-4 border border-slate-200 text-left text-sm space-y-2 mb-6">
                     <div class="flex justify-between">
@@ -1826,8 +1846,7 @@
             const resultPage = document.getElementById('page-result');
             resultPage.classList.remove('hidden');
             resultPage.classList.add('flex');
-            const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbxQKxxFWQJJKMKNe1_KAkmjw38DY-MY4h3gDYP4bROxBTip0x625l0TAWehRqBt3Wdiag/exec";
-        }
+            }
 
         function resetToHome() {
             appState.isExamActive = false;
