@@ -1,5 +1,3 @@
-# day5mlangi2
-Simulasi TKA
 <!DOCTYPE html>
 <html lang="id">
 <head>
