@@ -1826,6 +1826,7 @@
             const resultPage = document.getElementById('page-result');
             resultPage.classList.remove('hidden');
             resultPage.classList.add('flex');
+            const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbxQKxxFWQJJKMKNe1_KAkmjw38DY-MY4h3gDYP4bROxBTip0x625l0TAWehRqBt3Wdiag/exec";
         }
 
         function resetToHome() {
